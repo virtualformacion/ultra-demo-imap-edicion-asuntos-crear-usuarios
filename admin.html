@@ -138,7 +138,7 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
   const emails = parseEmails(emailsRaw);
   const res = await callFunc({ action: "create", adminUser, adminPass, payload: { username, password, expiresAt, emails } });
   if (res && res.success) {
-    document.getElementById("createMsg").innerText = "Usuario creado correctamente en GitHub. Espera a que Cloudflare termine el despliegue y recarga la página de acceso.";
+    document.getElementById("createMsg").innerText = "Usuario creado correctamente. Espera unos segundos y recarga la página de acceso.";
     // refrescar lista
     const list = await callFunc({ action: "list", adminUser, adminPass });
     renderUsers(list.users);
@@ -203,7 +203,7 @@ document.getElementById("btnSaveEdit").addEventListener("click", async ()=> {
   payload.emails = parseEmails(emailsRaw);
   const res = await callFunc({ action: "edit", adminUser, adminPass, payload });
   if (res && res.success) {
-    document.getElementById("editMsg").innerText = "Guardado en GitHub. Espera el despliegue de Cloudflare y recarga la página de acceso.";
+    document.getElementById("editMsg").innerText = "Guardado. Espera unos segundos y recarga la página de acceso.";
     document.getElementById("editModal").classList.add("hidden");
     const list = await callFunc({ action: "list", adminUser, adminPass });
     renderUsers(list.users);
@@ -218,7 +218,7 @@ window.delUser = async function(e){
   const username = e.target.getAttribute("data-user");
   const res = await callFunc({ action: "delete", adminUser, adminPass, payload: { username } });
   if (res && res.success) {
-    alert("El usuario ha sido eliminado en GitHub. Espera el despliegue de Cloudflare y recarga la página de acceso.");
+    alert("El usuario ha sido eliminado. Espera unos segundos y recarga la página de acceso.");
     const list = await callFunc({ action: "list", adminUser, adminPass });
     renderUsers(list.users);
   } else {
