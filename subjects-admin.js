@@ -9,7 +9,7 @@
  }
  async function load(){
   const result=await api('list');subjects=result.subjects;revision=result.sha;published=result.deployedSubjects;
-  render();el('subjectsPublishState').textContent=result.pendingDeployment?'Hay cambios pendientes de publicar. Espera a que Cloudflare termine el despliegue del último commit y después actualiza esta lista.':'La lista de GitHub coincide con la versión publicada.';
+  render();el('subjectsPublishState').textContent=result.pendingDeployment?'Hay cambios pendientes de publicar. Espera a que Cloudflare termine el despliegue del último commit y después actualiza esta lista.':'La lista coincide con la versión publicada.';
  }
  window.loadSubjects=async()=>{if(busy)return;setBusy(true);try{message('Cargando asuntos...');await load();message(`${subjects.length} asunto(s) de códigos configurados.`);}catch(e){message(e.message);}finally{setBusy(false);}};
  async function mutate(action,payload){
