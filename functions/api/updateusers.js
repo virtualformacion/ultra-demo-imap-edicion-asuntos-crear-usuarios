@@ -11,7 +11,7 @@ export async function onRequest({request, env}) {
 
 const GITHUB_TOKEN = env.GITHUB_TOKEN;
 const REPO_OWNER = env.GITHUB_REPO?.split("/")[0] || env.REPO_OWNER || "virtualformacion";
-const REPO_NAME = env.GITHUB_REPO?.split("/")[1] || env.REPO_NAME || "streaminggamaz-cloudflare-imap-edicion-asuntos-crear-usuarios";
+const REPO_NAME = env.GITHUB_REPO?.split("/")[1] || env.REPO_NAME || "ultra-demo-imap-edicion-asuntos-crear-usuarios";
 const FILE_PATH = env.GITHUB_FILE_PATH || env.FILE_PATH || "script.js";
 const BRANCH = env.GITHUB_BRANCH || env.BRANCH || "main";
 
