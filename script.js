@@ -1,6 +1,6 @@
 // ========== USUARIOS AUTORIZADOS ==========
 const USERS = [
-    { username: "gocuentascol", password: "gocuentascol2026", expiresAt: new Date("2027-11-23"), emails: ["tarahold594083093+grco@gmail.com","licosaleonor+popeye2@gmail.com"] },
+    { username: "gocuentascol", password: "gocuentascol2026", expiresAt: new Date("2027-11-23"), emails: ["tarah@gmail.com","licos@gmail.com"] },
     { username: "luis", password: "0000", expiresAt: new Date("2026-11-28"), emails: [] }
 ];
 
